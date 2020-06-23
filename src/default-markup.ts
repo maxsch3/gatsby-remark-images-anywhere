@@ -78,13 +78,13 @@ const processPlaceholder: ProcessMarkup = (data, options, input) => {
   const markup = placeholderData
     ? `
       ${comment('show a placeholder image.')}
-      <div
+      <span
         class="${CLASS_PLACEHOLDER}"
         style="
           ${absoluteStyle}
           background: ${backgroundColor} url(${placeholderData}) center / cover no-repeat;
         "
-      ></div>
+      ></span>
     `
     : ''
   
@@ -112,15 +112,15 @@ const processWrapper: ProcessMarkup = (data, options, input) => {
     };
 
     markup = `
-      <div class="${CLASS_WRAPPER}" style="${styles.imageWrapper}">
+      <span class="${CLASS_WRAPPER}" style="${styles.imageWrapper}">
       
         ${comment('preserve the aspect ratio')}
-          <div class="${CLASS_PADDING}" style="${
+          <span class="${CLASS_PADDING}" style="${
             styles.imagePadding
-          }"></div>
+          }"></span>
         
         ${input}
-      </div>
+      </span>
     `
   }
 
@@ -135,9 +135,9 @@ const processWrapper: ProcessMarkup = (data, options, input) => {
     `
 
     markup = `
-      <div class="${CLASS_WRAPPER}" style="${styles}">
+      <span class="${CLASS_WRAPPER}" style="${styles}">
         ${input}
-      </div>
+      </span>
     `
   }
 
